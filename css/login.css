@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    /* background: #e2e2e2; */
+    background: url(../images/adminback2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    height: 450px;
+    width: 350px;
+    border-radius: 15px;
+    background: rgba(8, 8, 8, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.container .user{
+    width: 120px;
+    height: 120px;
+    background: url(../images/admin.svg);
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 40px;
+}
+form{
+    width: 80%;
+}
+form .inputs{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom: 3px solid #adadad;
+    border-radius: 0 2px 2px 0;
+    /* background: #ff4949; */
+}
+input{
+    color: #fff;
+}
+.inputs input{
+    width: 100%;
+    /* padding: 0 5px; */
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.inputs label{
+    position: absolute;
+    top: 50%;
+    /* left: 5px; */
+    color: #adadad;
+    font-weight: 500;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all .5s;
+}
+.linea::after{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0px;
+    height: 4px;
+    background: #096bd4;
+    transition: all .5s;
+    border-radius: 0 2px 2px 0;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+    color: #096bd4;
+}
+input:focus ~ .linea::after,
+input:valid ~ .linea::after{
+    width: 100%;
+}
+input:-internal-autofill-selected{
+    padding-left: 5px;
+}
+input:-internal-autofill-selected ~ label{
+    top: -10px;
+    color: #096bd4;
+}
+input:-internal-autofill-selected ~ .linea::after{
+    width: 100%;
+}
+
+
+.boton{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background: #096bd4;
+    border-radius: 5px;
+    z-index: 12;
+}
+.boton input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #ffffff00;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    z-index: 11;
+    
+}
+.overlay::after{
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 80px;
+    background: #2e7dd1;
+    top: -80px;
+    left: -110px;
+    transform: rotate(35deg);
+    z-index: 10;
+    transition: all ease-in .3s;
+}
+
+.boton input:hover ~ .overlay::after{
+    left: 120%;
+}
+.olvidar{
+    padding-top: 15px;
+}
+.olvidar a{
+    text-decoration: none;
+    color: #096bd4;
+    font-size: 16px;
+}

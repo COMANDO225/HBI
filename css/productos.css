@@ -1,0 +1,218 @@
+@import url("estilos.css");
+
+body {
+  transition: all .2s;
+}
+
+.nav-wrapper {
+  height: 70px;
+  width: 100%;
+  background: var(--navBuscarDesk);
+}
+
+.seccion.productos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.titulo-productos {
+  color: var(--titleServicios);
+  font-size: 35px;
+  text-transform: uppercase;
+  padding: 80px 0;
+  background: var(--bgnoticias);
+  width: 100%;
+}
+.productos-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  width: 95%;
+  max-width: 1200px;
+  height: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+  gap: 30px;
+  margin: 60px 0 0 0;
+}
+
+.producto-item {
+  position: relative;
+  display: grid;
+  grid-template-rows: 75% 1fr;
+  width: 350px;
+  /* min-width: 380px; */
+  height: 380px;
+  /* min-height: 350px; */
+  justify-content: flex-end;
+  /* align-items: flex-start; */
+  background-color: var(--bgnoticias);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(17, 17, 17, 0.2);
+  transition: all 0.3s;
+  /* backface-visibility: hidden; */
+  text-decoration: none;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* .producto-item::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(11, 11, 11, 0.3);
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+} */
+
+.producto-item:hover{
+    transform: scale(1.05, 1.05);
+}
+.producto-item:hover:after {
+    opacity: 1;
+}
+.producto__imagen{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    /* padding: 10px; */
+}
+.item--img{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+.producto__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    background: var(--bgcardServicios);
+    padding: 10px 0 10px 15px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.producto__info--titulo{
+    color: var(--titleServicios);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+.producto__info--parrafo{
+    color: var(--textCardServicios);
+}
+.seccion.paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 60px 0;
+    /* background: rgb(124, 71, 71); */
+}
+.container-paginacion{
+    position: relative;
+    /* background: var(--bgnoticias); */
+    display: flex;
+    /* padding: 10px 20px; */
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0, .1);
+    transform: scale(1);
+}
+.container-paginacion li{
+    line-height: 50px;
+    list-style: none;
+    margin: 0 5px;
+}
+.pageNumber{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    transition: all .3s;
+}
+.pagination-item a{
+    color: var(--btnpaginacion);
+}
+.pagination-item.pageNumber a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    /* color: var(--btnpaginacion); */
+    font-weight: 600;
+    transition: all .3s;
+    /* background-color: rgb(248, 248, 248); */
+    z-index: 0;
+    border-radius: 50%;
+}
+.pageNumber a::before{
+    content: '';
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    transition: all .3s;
+    background: var(--iconoPagination);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+    opacity: 0;
+}
+.pageNumber:hover a::before,
+.pageNumber.active a::before{
+    opacity: 1;
+    /* color: var(--principal); */
+}
+
+.pagination-item:first-child{
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--principal);
+}
+.pagination-item:last-child{
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+a.prev i, a.next i {
+    color: var(--principal);
+}
+
+@media (max-width : 400px){
+    .container-paginacion{
+        transform: scale(0.9);
+    }
+}
+@media (max-width : 320px){
+    .container-paginacion{
+        transform: scale(0.8);
+    }
+    .productos-container {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+        gap: 25px;
+        margin: 60px 0;
+      }
+    .producto-item {
+        position: relative;
+        display: grid;
+        grid-template-rows: 75% 1fr;
+        width: 300px;
+        height: 330px;
+    }
+}

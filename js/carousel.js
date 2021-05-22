@@ -21,14 +21,13 @@ $(document).ready(function(){
             1000:{
                 items:1,
                 nav:false,
-                loop:true
             }
         }
     });
     $('.carousel2').owlCarousel({
         loop:true,
         margin:20,
-        autoplay: false,
+        autoplay: true,
         nav:false,
         // slideBy: 2,
         responsiveClass:true,
