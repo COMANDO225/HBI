@@ -1224,7 +1224,7 @@ div.noticia .noticia-content {
 .noticia-header h1 {
   font-size: 14px;
   text-transform: uppercase;
-  color: #1562b7;
+  color: #096bd4;
 }
 .noticia-header h2 {
   font-size: 14px;
@@ -1232,7 +1232,7 @@ div.noticia .noticia-content {
 }
 .noticia-content .noticia-titulo {
   width: 100%;
-  background-color: #1562b7;
+  background-color: #096bd4;
   color: var(--textwhite);
   text-align: center;
   text-transform: uppercase;
@@ -1243,9 +1243,9 @@ div.noticia .noticia-content {
 }
 .noticia-body {
   font-size: 15px;
-  border-top: 6px double #1562b7;
+  border-top: 6px double #096bd4;
   padding: 6px 0;
-  color: var(--title);
+  color: var(--elegant);
   text-align: justify;
 }
 .noticia-content .noticia-imagen {
@@ -1270,7 +1270,7 @@ div.noticia .noticia-content {
   font-size: 16px;
   margin: 5px 0;
   padding: 10px;
-  color: var(--subtitle);
+  color: #666768;
   background: var(--placeholder);
   font-weight: 500;
 }
