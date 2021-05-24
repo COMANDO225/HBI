@@ -382,13 +382,13 @@
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción del producto...">
+                        <textarea type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripción del producto..."></textarea>
                     </div>
                     <div class="form-group text-center">
                         <div class="input-group mb-3 text-center">
                             <!-- <input type="text" class="form-control" id="imagen" placeholder="imagen"> -->
                             <input type="file" id="producto_image" name="producto_image" class="form-control">
-                            <label class="input-group-text" for="imagen"><i class="bi bi-image"></i></label>
+                            <label class="input-group-text" for="producto_image"><i class="bi bi-image"></i></label>
                             
                         </div>
                         <span id="producto_uploaded_image" class="d-flex p-0"></span>

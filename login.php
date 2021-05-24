@@ -31,7 +31,7 @@
                         <input type="submit" name="submit" value="Iniciar Sesión">
                         <span class="overlay"></span>
                     </div>
-                    <div class="olvidar"><a href="index.html">Regresar a la pagina principal</a></div>
+                    <div class="olvidar"><a href="index.php">Regresar a la pagina principal</a></div>
                 </form>
             </div>
         </div>

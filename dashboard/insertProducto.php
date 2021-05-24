@@ -41,7 +41,7 @@ if(isset($_POST["operation"]))
 		);
 		if(!empty($result))
 		{
-			echo 'Data Inserted';
+			echo 'Producto Insertado';
 		}
 	}
 	if($_POST["operation"] == "Editar")
@@ -89,13 +89,6 @@ if(isset($_POST["operation"]))
 		if(!empty($result))
 		{
 			echo 'Producto Actualizado';
-			// echo "<script> 
-			// Swal.fire(
-			// 	'The Internet?',
-			// 	'That thing is still around?',
-			// 	'question'
-			// )
-			// </script>";
 		}
 	}
 }
