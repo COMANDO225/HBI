@@ -23,6 +23,13 @@
         href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/envio.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+
     <title>Hidrobombeo Ingenieros SAC</title>
 </head>
 
@@ -49,7 +56,7 @@
                     <div class="hero-leyenda-container">
                         <div class="hero-leyenda">
                             <div class="leyenda-titulo">
-                                <h2>AHORA QUE HAGO :( ? </h2>
+                                <h2>Título 2</h2>
                             </div>
                             <div class="leyenda-contenido">
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione ex quo,
@@ -65,7 +72,7 @@
                     <div class="hero-leyenda-container">
                         <div class="hero-leyenda">
                             <div class="leyenda-titulo">
-                                <h2>A MIMIRR</h2>
+                                <h2>Título 3</h2>
                             </div>
                             <div class="leyenda-contenido">
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores ratione ex quo,
@@ -103,16 +110,16 @@
                 </div>
                 <div class="nav-items">
                     
-                    <li><a href="">Servicios</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
                     <li><a href="productos.php">Productos</a></li>
-                    <li><a href="">Nosotros</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                 </div>
                 
                 <!-- <div class="btn-adjust"><span class="fas fa-adjust"></span></div> -->
                 <div class="assets-container">
                     <div class="btn-buscar"><span class="fas fa-search"></span></div>
-                    <form action="#">
-                        <input type="search" class="buscar" placeholder="Buscar" required>
+                    <form action="buscar.php" method="POST">
+                        <input type="search" class="buscar" placeholder="Buscar" name="search" required>
                         <button type="submit" class="fas fa-search"></button>
                     </form>
                     <button class="switch" id="switch">
@@ -598,6 +605,39 @@
         <div class="heading title-cards contacto">
             <h2>Ponte en contacto con <span>nosotros</span></h2>
         </div>
+        <section class="form_wrap">
+
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>INFORMACION<br>DE CONTACTO</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> informes@hbisac.com.pe</p>
+                <p><span class="fa fa-mobile"></span> 974 609 238 / 432 4376</p>
+            </section>
+        </section>
+
+        <form action="envio.php" class="form_contact" method="POST" lang="es">
+            <h2>Envia un mensaje</h2>
+            <div class="user_info">
+                <label for="names">Nombres</label>
+                <input type="text" id="names" required>
+
+                <label for="phone">Telefono / Celular</label>
+                <input type="tel" id="phone" minlength="9" maxlength="9" required>
+
+                <label for="email">Correo electronico *</label>
+                <input type="email" id="email" required title="Porfavor, ingresa un email válido.">
+
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" required></textarea>
+
+                <input type="submit" value="Enviar Mensaje" id="btnSend">
+            </div>
+        </form>
+
+    </section>
         <div class="contactos-container">
             <div class="contactos-items">
                 <div class="contacto-item">

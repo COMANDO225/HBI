@@ -199,6 +199,9 @@ a.next.disable,a.next.disable i{
     cursor: default !important;
 }
 
+
+
+
 @media (max-width : 400px){
     .container-paginacion{
         transform: scale(0.9);

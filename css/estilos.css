@@ -2132,6 +2132,9 @@ div.icon-wsp a:hover img{
 -ms-user-select: none;
 user-select: none;
 }
+
+
+
 @media (max-width: 600px){
   .descargar_brochure{
     width: 85px;

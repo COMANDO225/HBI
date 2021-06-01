@@ -1,0 +1,63 @@
+@import url("estilos.css");
+
+body {
+  transition: all .2s;
+}
+
+.nav-wrapper {
+  height: 70px;
+  width: 100%;
+  background: var(--navBuscarDesk);
+}
+
+.facts_container{
+  max-width: 1200px;
+  margin: 4% auto;
+  display: grid;
+  grid-gap: 1rem;
+  text-align: center;
+}
+
+
+
+@media (min-width: 600px) {
+  .facts_container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .facts_container { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+
+.facts_container_element{
+  margin: 20px;
+  width: 100%;
+  margin: 4%;
+}
+
+.facts_container_element .facts_wa{
+  width: 110%;
+  padding: 4%;
+}
+
+.facts_container_element_left{
+  display: inline-block;
+}
+.facts_container_element_left i{
+  font-size: 70px;  
+  color: #0252B2;
+}
+.facts_container_element_right{
+  display: inline-block;
+  width: 300px;
+}
+
+.facts_container_element_right p{
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+#link{
+  text-decoration: none;
+}

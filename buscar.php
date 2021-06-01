@@ -1,23 +1,5 @@
-<?php
-    include_once './database/conexion.php';
-    $consulta = "SELECT * FROM productos";
-    $statement = $conexion->prepare($consulta);
-    $statement->execute();
-    $resultado = $statement->fetchAll();
-
-    //cantidad de items que se muestran x pagina
-    $item_x_pagina = 9;
-
-    //Contar el total de items de la base de datos
-    $total_items_db =$statement->rowCount();
-
-    $paginas = $total_items_db/$item_x_pagina;
-    $paginas = ceil($paginas);
-?>
-
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,27 +10,11 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>HBI - Productos</title>
-    <?php 
-        if(!$_GET){
-            header('Location:productos.php?pagina=1');
-        }
-        if($_GET['pagina']>$paginas || $_GET['pagina']<=0){
-            header('Location:productos.php?pagina=1');
-        }
-        $iniciar = ($_GET['pagina']-1) * $item_x_pagina;
-
-        $consulta_items = "SELECT * FROM productos LIMIT :iniciar, :nitems";
-        $statement_items = $conexion->prepare($consulta_items);
-        $statement_items->bindParam(':iniciar', $iniciar, PDO::PARAM_INT);
-        $statement_items->bindParam(':nitems', $item_x_pagina, PDO::PARAM_INT);
-        $statement_items->execute();
-
-        $resultado_item = $statement_items->fetchAll();
-    ?>
+    
 </head>
 
 <body>
-    <section class="header">
+<section class="header">
         <div class="nav-wrapper"></div>
         <nav>
             <div class="nav-container">
@@ -78,52 +44,50 @@
     </section>
     <section class="seccion productos">
         <h2 class="titulo titulo-productos">Productos</h2>
+
+
+        <h1 style="font-size:30px; color: #0252B2; text-align:center; margin: 15px; margin-top: 50px;">Productos referentes: <?php echo $_REQUEST['search'] ?> </h1>
+
+
         <div class="productos-container">
             
-            <?php 
-                #Creando el ciclo de los productos
-                foreach($resultado_item as $producto):
-            ?>
-            <a href="productoInfo.php?id=<?php echo $producto['id']; ?>" class="producto-item">
-                <div class="producto__imagen">
-                    <img class="item--img" src="./dashboard/uploads/<?php echo $producto['image'] ?>" alt="">
-                </div>
-                <div class="producto__info">
-                    <h2 class="producto__info--titulo"><?php echo $producto['nombre']?></h2>
-                    <p class="producto__info--parrafo">Click para más detalles</p>
-                </div>
-            </a>
-            <?php endforeach; ?>
-            
+            <?php
+            include('conn.php');
+            $titulo_bus = $_REQUEST['search'];
+            mysqli_select_db($conexion,$db_nombre) or die ("Error al buscar");
+            $registros = $conexion->query("SELECT * FROM productos WHERE nombre LIKE '%".$titulo_bus."%' OR subnombre LIKE '%".$titulo_bus."%' OR procedencia LIKE '%".$titulo_bus."%' OR fabricante LIKE '%".$titulo_bus."%' OR aplicacion LIKE '%".$titulo_bus."%' OR valores LIKE '%".$titulo_bus."%' OR descripcion LIKE '%".$titulo_bus."%' ");
+            if ($registro = mysqli_fetch_array($registros)){?>
+
+            <?php foreach ($registros as $registro): ?>
+
+                <a href="productoInfo.php?id=<?php echo $registro['id']; ?>" class="producto-item">
+                    <div class="producto__imagen">
+                        <img class="item--img" src="./dashboard/uploads/<?php echo $registro['image'] ?>" alt="">
+                    </div>
+                    <div class="producto__info">
+                        <h2 class="producto__info--titulo"><?php echo $registro['nombre']?></h2>
+                        <p class="producto__info--parrafo">Click para más detalles</p>
+                    </div>
+                </a>
+
+            <?php endforeach ?>
+
+            <?php
+            }else{?>          
         </div>
+            <h4 style="font-size:20px; color: black; text-align:center;" href="index.php" class="return_productos">
+                No se encontraron productos referentes a: <?php $titulo_bus = $_REQUEST['search']; echo $titulo_bus ?> 
+            </h4>
+        <?php
+        }
+        ?> 
+        
+        
     </section>
-    <section class="seccion paginacion">
-        <ul class="container-paginacion">
 
-            <li class="pagination-item ">
-                <a disabled href="productos.php?pagina=<?php echo $_GET['pagina']-1 ?>" class="prev <?php echo $_GET['pagina']<=1 ? 'disable': '' ?>">
-                    <i class="fas fa-chevron-left"></i>
-                </a>
-            </li>
-
-
-            <?php for($i = 0; $i< $paginas; $i++): ?>
-                <li class="pagination-item pageNumber <?php echo $_GET['pagina']==$i+1 ? 'active' : '' ?>" >
-                    <a href="productos.php?pagina=<?php echo $i+1 ?>">
-                        <?php echo $i+1 ?>
-                    </a>
-                </li>
-            <?php endfor ?>
-
-            <li class="pagination-item">
-                <a href="productos.php?pagina=<?php echo $_GET['pagina']+1 ?>" class="next <?php echo $_GET['pagina']>=$paginas? 'disable': '' ?>">
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            </li>
-
-
-        </ul>
-    </section>
+    <div style="margin: 50px; display: block; text-align: center;">
+        <a style="font-size:30px; color: #0252B2; text-align:center;" href="index.php" class="return_productos">Volver</a>
+    </div>
 
 
     <footer>
@@ -230,6 +194,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script src="js/actives.js"></script>
+    
 </body>
-
 </html>
