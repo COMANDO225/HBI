@@ -605,39 +605,42 @@
         <div class="heading title-cards contacto">
             <h2>Ponte en contacto con <span>nosotros</span></h2>
         </div>
-        <section class="form_wrap">
-
-        <section class="cantact_info">
-            <section class="info_title">
-                <span class="fa fa-user-circle"></span>
-                <h2>INFORMACION<br>DE CONTACTO</h2>
+    <!-- <section class="form_wrap">
+            <section class="cantact_info">
+                <section class="info_title">
+                    <span class="fa fa-user-circle"></span>
+                    <h2>INFORMACION<br>DE CONTACTO</h2>
+                </section>
+                <section class="info_items">
+                    <p><span class="fa fa-envelope"></span> informes@hbisac.com.pe</p>
+                    <p><span class="fa fa-mobile"></span> 974 609 238 / 432 4376</p>
+                </section>
             </section>
-            <section class="info_items">
-                <p><span class="fa fa-envelope"></span> informes@hbisac.com.pe</p>
-                <p><span class="fa fa-mobile"></span> 974 609 238 / 432 4376</p>
-            </section>
-        </section>
 
-        <form action="envio.php" class="form_contact" method="POST" lang="es">
-            <h2>Envia un mensaje</h2>
-            <div class="user_info">
-                <label for="names">Nombres</label>
-                <input type="text" id="names" required>
+            <form action="envio.php" class="form_contact" method="POST" lang="es">
+                <h2>Envia un mensaje</h2>
+                <div class="user_info">
+                    <label for="names">Nombres</label>
+                    <input type="text" id="names" required>
 
-                <label for="phone">Telefono / Celular</label>
-                <input type="tel" id="phone" minlength="9" maxlength="9" required>
+                    <label for="phone">Telefono / Celular</label>
+                    <input type="tel" id="phone" minlength="9" maxlength="9" required>
 
-                <label for="email">Correo electronico *</label>
-                <input type="email" id="email" required title="Porfavor, ingresa un email válido.">
+                    <label for="email">Correo electronico *</label>
+                    <input type="email" id="email" required title="Porfavor, ingresa un email válido.">
 
-                <label for="mensaje">Mensaje *</label>
-                <textarea id="mensaje" required></textarea>
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" required></textarea>
 
-                <input type="submit" value="Enviar Mensaje" id="btnSend">
-            </div>
-        </form>
+                    <input type="submit" value="Enviar Mensaje" id="btnSend">
+                </div>
+            </form>
+        </section> -->
 
-    </section>
+
+        <!-- <div class="heading blanco">
+            <P>Envianos tu consulta, queja, reclamo, petición estamos para escucharte papu</P>
+        </div> -->
         <div class="contactos-container">
             <div class="contactos-items">
                 <div class="contacto-item">
@@ -677,6 +680,29 @@
                 </div>
             </div>
         </div>
+        </div>
+    </section>
+    <section class="mail" >
+        <!-- <div class="heading blanco">
+            <h2>Hazmelo <span class="spancolor">SABER</span></h2>
+            <P>Envianos tu consulta, queja, reclamo, petición estamos para escucharte papu</P>
+        </div> -->
+        <div class="contentmail">
+            <div class="formbox">
+                <form action="envio.php" method="POST" lang="es">
+                    <h3>Envia un mensaje</h3>
+                    <input  type="text" id="names" placeholder="Nombre Completo *" required>
+                    <input type="tel" id="phone" minlength="9" maxlength="9" required placeholder="Telefono / Celular *">
+                    <input type="email" id="email" required placeholder="Correo Electrónico *" title="Porfavor, ingresa un email válido.">
+                    <textarea id="mensaje" required placeholder="Tu mensaje..."></textarea>
+                    <input type="submit" value="Enviar Mensaje" id="btnSend">
+                </form>
+            </div>
+            <div class="email-content">
+                <div class="email-content-image">
+                    <img src="/images/MECANICO CONTACTO.png" alt="">
+                </div>
+            </div>
         </div>
     </section>
 

@@ -1580,6 +1580,8 @@ div.noticia .noticia-content {
 }
 
 /* ESTILOS DE LA SECCION CONTACTOS  */
+
+
 .contactos{
   width: 100%;
   padding: 80px 0px;
@@ -1665,6 +1667,77 @@ div.noticia .noticia-content {
 }
 
 
+/* ESTILO DE LA SECCION MAIL */
+
+.mail{
+  /* background: #121212; */
+  padding: 70px 0px 0px 0px;
+}
+.contentmail{
+  display: grid;
+  grid-gap: 40px;
+  margin: auto;
+  grid-template-columns: 6fr 4fr;
+  max-width: 1150px;
+  width: 90%;
+}
+
+.formbox{
+  position: relative;
+  width: 100%;
+}
+
+.email-content-image{
+  width: 100%;
+  height: 100%;
+  background: url(../images/MECANICO\ CONTACTO2.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.formbox form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.formbox form h3{
+  color: var(--tittleContactos);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.formbox form input,
+.formbox form textarea{
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background:var(--bgnoticias);
+  color: var(--tittleContactos);
+  resize: none;
+}
+.formbox form textarea{
+  min-height: 150px;
+}
+.formbox form input::placeholder,
+.formbox form input::placeholder,.formbox form textarea::placeholder{
+  color: var(--tittleContactos);
+}
+.formbox form input[type = "submit"]{
+  background: #00a3e9;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+
+
+
+
       /*! ATEEEEENNNNCIOOOOON COMPAREEE PORQUE SE VIENE LO MEJOOOORRR  */
       /*! --------------------------------------------------------------*/
       /*! --------------------------------------------------------------*/
@@ -1674,7 +1747,7 @@ footer{
   position: relative;
   width: 100%;
   height: auto;
-  padding: 50px;
+  padding: 80px 50px;
   background: var(--elegant);
   display: flex;
   justify-content: space-between;
@@ -2202,6 +2275,31 @@ user-select: none;
       transition:all .4s;
       grid-gap: 5px;
   }
+
+  .contentmail{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 90%;
+  }
+  .email-content{
+    display: none;
+  }
+  
+  /* .formbox{
+    position: relative;
+    width: 100%;
+  }
+  
+  .email-content-image{
+    width: 100%;
+    height: 100%;
+    background: url(../images/MECANICO\ CONTACTO.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: top;
+  } */
+
 }
 
 
